@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Internship Program — Iyonex Automation</title>
+<meta name="description" content="Iyonex Automation runs an Engineering Internship Program in Robotics, AI, Embedded Systems, IoT and Industrial Automation. Work on real industry projects with engineering mentors. No internship fee.">
+<meta name="keywords" content="Iyonex Automation, Robotics Internship, Embedded Systems Internship, AI Internship, IoT Internship, Engineering Internship, Industrial Automation">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Iyonex Automation">
+<meta name="theme-color" content="#0B0E14">
+<link rel="canonical" href="https://iyonex.com/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Engineering Internship Program — Iyonex Automation">
+<meta property="og:description" content="Work on real-world engineering projects in Robotics, AI, Embedded Systems, IoT and Industrial Automation — alongside the engineers building them.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iyonex.com/">
+<meta property="og:site_name" content="Iyonex Automation">
+<meta property="og:image" content="https://iyonex.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Engineering Internship Program — Iyonex Automation">
+<meta name="twitter:description" content="Work on real-world engineering projects in Robotics, AI, Embedded Systems, IoT and Industrial Automation.">
+<meta name="twitter:image" content="https://iyonex.com/assets/og-image.png">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.tailwindcss.com">
+<link rel="preconnect" href="https://unpkg.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iyonex Automation",
+  "url": "https://iyonex.com/",
+  "logo": "https://iyonex.com/assets/logo.png",
+  "email": "ceo@iyonex.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5 Seenuvasa Counder St, Sellaperumal Pet, Lawspet",
+    "addressLocality": "Pondicherry",
+    "addressRegion": "Puducherry",
+    "postalCode": "605008",
+    "addressCountry": "IN"
+  },
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the internship free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Iyonex Automation does not charge any internship fee." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I receive a certificate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, a certificate is issued after successful completion of the internship." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I work on real projects?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, interns contribute directly to real engineering projects at Iyonex Automation." }
+    }
+  ]
+}
+</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0B0E14',
+          ink2: '#141A26',
+          line: '#E4E8EF',
+          linedark: '#232A3A',
+          paper: '#FFFFFF',
+          paper2: '#F5F7FA',
+          soft: '#5B6472',
+          mist: '#9AA4B6',
+          blue: {
+            DEFAULT: '#0A7CFF',
+            dim: '#0A66CF',
+            50: '#EAF3FF',
+          },
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<style>
+  :root{
+    --blue:#0A7CFF;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    font-feature-settings:"ss01" on;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:#0A7CFF; color:#fff;}
+  section[id]{ scroll-margin-top: 72px; }
+
+  img{ max-width:100%; height:auto; }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid #0A7CFF; outline-offset:2px; border-radius:4px;
+  }
+
+  /* Blueprint grid */
+  .grid-blueprint{
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .grid-blueprint-light{
+    background-image:
+      linear-gradient(to right, rgba(11,14,20,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11,14,20,0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  /* corner crosshair marks, like alignment fiducials on a PCB */
+  .fiducial{position:absolute; width:22px; height:22px; pointer-events:none;}
+  .fiducial::before, .fiducial::after{content:''; position:absolute; background:rgba(255,255,255,0.35);}
+  .fiducial::before{width:100%; height:1px; top:50%; left:0;}
+  .fiducial::after{width:1px; height:100%; left:50%; top:0;}
+  .fiducial-dot{position:absolute; top:50%; left:50%; width:4px; height:4px; margin:-2px; border-radius:999px; background:#0A7CFF;}
+
+  /* signature: schematic trace draw-in */
+  .trace-path{
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: draw 2.6s cubic-bezier(.65,.05,.36,1) forwards;
+  }
+  .trace-path.d2{ animation-delay:.35s; }
+  .trace-path.d3{ animation-delay:.7s; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+
+  .node-pulse{ animation: pulse-node 2.4s ease-in-out infinite; transform-origin:center; }
+  @keyframes pulse-node{
+    0%,100%{ opacity:.55; r:3; }
+    50%{ opacity:1; r:4.5; }
+  }
+
+  .glass{
+    background: rgba(20,26,38,0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .card-hover{ transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s; }
+  .gallery-item img{ transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .gallery-item:hover img{ transform: scale(1.06); }
+  .card-hover:hover{ transform: translateY(-4px); border-color: rgba(10,124,255,0.5); box-shadow: 0 20px 40px -20px rgba(10,124,255,0.25); }
+
+  .tag-corner{ position:relative; }
+  .tag-corner::before, .tag-corner::after{
+    content:''; position:absolute; width:10px; height:10px; border-color:#0A7CFF; opacity:0; transition:opacity .3s;
+  }
+  .tag-corner::before{ top:-1px; left:-1px; border-top:1.5px solid; border-left:1.5px solid; }
+  .tag-corner::after{ bottom:-1px; right:-1px; border-bottom:1.5px solid; border-right:1.5px solid; }
+  .tag-corner:hover::before, .tag-corner:hover::after{ opacity:1; }
+
+  .nav-blur{ background: rgba(255,255,255,0.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+  .reveal{ opacity:0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform: translateY(0); }
+
+  .marquee-track{ animation: marquee 26s linear infinite; }
+  @keyframes marquee{ from{ transform: translateX(0);} to{ transform: translateX(-50%);} }
+
+  .faq-content{ max-height:0; overflow:hidden; transition: max-height .4s ease; }
+  .faq-item.open .faq-content{ max-height:220px; }
+  .faq-item.open .chev{ transform: rotate(45deg); }
+  .chev{ transition: transform .3s ease; }
+
+  .btn-primary{
+    background:#0A7CFF; color:#fff; transition: all .3s ease; position:relative; overflow:hidden;
+  }
+  .btn-primary:hover{ background:#0A66CF; box-shadow: 0 10px 30px -8px rgba(10,124,255,0.55); }
+
+  .num-mono{ font-variant-numeric: tabular-nums; }
+
+  @media (prefers-reduced-motion: reduce){
+    .trace-path{ animation:none; stroke-dashoffset:0; }
+    .node-pulse{ animation:none; }
+    .reveal{ transition:none; opacity:1; transform:none; }
+    .marquee-track{ animation:none; }
+  }
+</style>
+</head>
+<body class="bg-paper text-ink font-body">
+<a href="#top" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-3 focus:left-3 focus:bg-blue focus:text-white focus:px-4 focus:py-2 focus:rounded-full focus:text-sm focus:font-semibold">Skip to content</a>
+
+<!-- ================= NAV ================= -->
+<header class="fixed top-0 inset-x-0 z-50 nav-blur border-b border-line">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 group">
+      <img src="assets/logo.png" alt="Iyonex Automation" class="h-[24px] w-auto">
+      <span class="hidden sm:inline-block font-mono text-[10px] tracking-[0.15em] text-soft uppercase pl-3 border-l border-line ml-0.5">Automation</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-[14.5px] text-ink/80">
+      <a href="#why" class="nav-link hover:text-blue transition-colors">Why Iyonex</a>
+      <a href="#domains" class="nav-link hover:text-blue transition-colors">Domains</a>
+      <a href="#gallery" class="nav-link hover:text-blue transition-colors">Gallery</a>
+      <a href="#process" class="nav-link hover:text-blue transition-colors">Process</a>
+      <a href="#faq" class="nav-link hover:text-blue transition-colors">FAQ</a>
+      <a href="#contact" class="nav-link hover:text-blue transition-colors">Contact</a>
+    </nav>
+    <a href="#apply" class="hidden md:inline-flex items-center gap-2 btn-primary text-[14px] font-semibold px-5 py-2.5 rounded-full">
+      Apply Internship
+      <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+    </a>
+    <button id="menuBtn" class="lg:hidden p-2 text-ink" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <i data-lucide="menu" class="w-6 h-6" id="menuIconOpen"></i>
+      <i data-lucide="x" class="w-6 h-6 hidden" id="menuIconClose"></i>
+    </button>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-line bg-paper px-6 py-5 flex flex-col gap-4 font-medium">
+    <a href="#why" class="py-1">Why Iyonex</a>
+    <a href="#domains" class="py-1">Domains</a>
+    <a href="#gallery" class="py-1">Gallery</a>
+    <a href="#process" class="py-1">Process</a>
+    <a href="#faq" class="py-1">FAQ</a>
+    <a href="#contact" class="py-1">Contact</a>
+    <a href="#apply" class="btn-primary text-center font-semibold px-5 py-3 rounded-full mt-1">Apply Internship</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="top" class="relative bg-ink text-white overflow-hidden pt-[72px]">
+  <div class="absolute inset-0 grid-blueprint"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ink/10 to-ink"></div>
+
+  <!-- fiducials -->
+  <div class="fiducial hidden sm:block" style="top:100px; left:24px;"><span class="fiducial-dot"></span></div>
+  <div class="fiducial hidden sm:block" style="top:100px; right:24px;"><span class="fiducial-dot"></span></div>
+  <div class="fiducial hidden sm:block" style="bottom:96px; left:24px;"><span class="fiducial-dot"></span></div>
+  <div class="fiducial hidden sm:block" style="bottom:96px; right:24px;"><span class="fiducial-dot"></span></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-28 lg:pt-24 lg:pb-32 grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-blue border border-blue/30 bg-blue/10 rounded-full px-3.5 py-1.5 mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue node-pulse"></span>
+        Applications Open — 2026
+      </div>
+      <h1 class="font-display font-semibold leading-[1.04] tracking-tight text-[42px] sm:text-[54px] lg:text-[60px]">
+        Engineering
+        <span class="block text-blue">Internship Program</span>
+      </h1>
+      <p class="mt-6 text-[17px] sm:text-[18px] leading-relaxed text-mist max-w-lg">
+        Work on real-world engineering projects in Robotics, AI, Embedded Systems, IoT and Industrial Automation — alongside the engineers building them.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="#apply" class="btn-primary inline-flex items-center gap-2 font-semibold text-[15px] px-7 py-3.5 rounded-full">
+          Apply Internship
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#domains" class="inline-flex items-center gap-2 font-semibold text-[15px] px-7 py-3.5 rounded-full border border-white/15 hover:border-white/40 transition-colors">
+          View Domains
+        </a>
+      </div>
+
+      <div class="mt-14 grid grid-cols-3 gap-6 max-w-md font-mono">
+        <div>
+          <div class="text-[22px] font-semibold text-white">2024</div>
+          <div class="text-[10.5px] tracking-widest uppercase text-mist mt-1">Established</div>
+        </div>
+        <div class="border-l border-white/10 pl-6">
+          <div class="text-[22px] font-semibold text-white">0<span class="text-blue">%</span></div>
+          <div class="text-[10.5px] tracking-widest uppercase text-mist mt-1">Internship Fee</div>
+        </div>
+        <div class="border-l border-white/10 pl-6">
+          <div class="text-[22px] font-semibold text-white">6+</div>
+          <div class="text-[10.5px] tracking-widest uppercase text-mist mt-1">Engineering Domains</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signature: animated schematic robotic-arm trace -->
+    <div class="relative h-[380px] sm:h-[440px] lg:h-[520px]">
+      <svg viewBox="0 0 480 520" fill="none" class="w-full h-full">
+        <!-- base plate -->
+        <rect x="150" y="440" width="180" height="14" rx="3" stroke="#2A3346" stroke-width="1.5"/>
+        <!-- articulated arm -->
+        <path class="trace-path" d="M240 440 L240 360 L170 300 L170 220 L280 190 L280 110" stroke="#0A7CFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- gripper -->
+        <path class="trace-path d2" d="M280 110 L250 80 M280 110 L310 80" stroke="#0A7CFF" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- circuit branch lines -->
+        <path class="trace-path d3" d="M170 220 L90 220 L90 170 M170 300 L60 300 M280 190 L370 190 L370 250 M240 360 L340 360 L340 410" stroke="#3A4256" stroke-width="1.4" stroke-linecap="round"/>
+        <!-- joints -->
+        <circle cx="240" cy="440" r="4" fill="#0A7CFF"/>
+        <circle cx="240" cy="360" r="3.5" class="node-pulse" fill="#0A7CFF"/>
+        <circle cx="170" cy="300" r="3.5" class="node-pulse" fill="#0A7CFF" style="animation-delay:.4s"/>
+        <circle cx="170" cy="220" r="3.5" class="node-pulse" fill="#0A7CFF" style="animation-delay:.8s"/>
+        <circle cx="280" cy="190" r="3.5" class="node-pulse" fill="#0A7CFF" style="animation-delay:1.2s"/>
+        <circle cx="280" cy="110" r="4" fill="#0A7CFF"/>
+        <!-- circuit terminal nodes -->
+        <circle cx="90" cy="170" r="3" fill="#3A4256"/>
+        <circle cx="60" cy="300" r="3" fill="#3A4256"/>
+        <circle cx="370" cy="250" r="3" fill="#3A4256"/>
+        <circle cx="340" cy="410" r="3" fill="#3A4256"/>
+        <!-- annotation labels -->
+        <text x="345" y="245" font-family="IBM Plex Mono" font-size="9" fill="#5B6472" letter-spacing="1">J-04</text>
+        <text x="30" y="165" font-family="IBM Plex Mono" font-size="9" fill="#5B6472" letter-spacing="1">SENS-A</text>
+        <text x="20" y="305" font-family="IBM Plex Mono" font-size="9" fill="#5B6472" letter-spacing="1">SENS-B</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- title block strip, like an engineering drawing footer -->
+  <div class="relative border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-3.5 flex flex-wrap items-center justify-between gap-2 font-mono text-[10.5px] tracking-wider uppercase text-mist">
+      <span>IYONEX-AUTOMATION / INTERNSHIP-PROGRAM</span>
+      <span class="hidden sm:inline">SHEET 01 / 06</span>
+      <span>REV. 2026.08 · EST. 2024–PRESENT</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY JOIN ================= -->
+<section id="why" class="bg-paper py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
+      <div>
+        <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Why Join Iyonex</div>
+        <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight max-w-xl">Built by engineers, for engineers-in-the-making.</h2>
+      </div>
+      <p class="text-soft max-w-sm leading-relaxed">Every intern is placed on an active engineering project — not a simulation of one.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="reveal card-hover tag-corner border border-line rounded-2xl p-7 bg-paper2/60">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue flex items-center justify-center mb-5"><i data-lucide="factory" class="w-5 h-5"></i></div>
+        <h3 class="font-display font-semibold text-[18px] mb-2">Live Industry Projects</h3>
+        <p class="text-soft text-[14.5px] leading-relaxed">Contribute to engineering work that ships — real hardware, real deployments, real deadlines.</p>
+      </div>
+      <div class="reveal card-hover tag-corner border border-line rounded-2xl p-7 bg-paper2/60">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue flex items-center justify-center mb-5"><i data-lucide="users" class="w-5 h-5"></i></div>
+        <h3 class="font-display font-semibold text-[18px] mb-2">Experienced Engineering Mentors</h3>
+        <p class="text-soft text-[14.5px] leading-relaxed">Work directly under practicing robotics and embedded systems engineers.</p>
+      </div>
+      <div class="reveal card-hover tag-corner border border-line rounded-2xl p-7 bg-paper2/60">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue flex items-center justify-center mb-5"><i data-lucide="flask-conical" class="w-5 h-5"></i></div>
+        <h3 class="font-display font-semibold text-[18px] mb-2">Research &amp; Innovation</h3>
+        <p class="text-soft text-[14.5px] leading-relaxed">Explore open engineering problems in perception, control, and connected systems.</p>
+      </div>
+      <div class="reveal card-hover tag-corner border border-line rounded-2xl p-7 bg-paper2/60">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue flex items-center justify-center mb-5"><i data-lucide="box" class="w-5 h-5"></i></div>
+        <h3 class="font-display font-semibold text-[18px] mb-2">Product Development Experience</h3>
+        <p class="text-soft text-[14.5px] leading-relaxed">Take a build from prototype to a working product — hardware, firmware, and software together.</p>
+      </div>
+      <div class="reveal card-hover tag-corner border border-line rounded-2xl p-7 bg-paper2/60">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue flex items-center justify-center mb-5"><i data-lucide="cpu" class="w-5 h-5"></i></div>
+        <h3 class="font-display font-semibold text-[18px] mb-2">Modern Engineering Lab</h3>
+        <p class="text-soft text-[14.5px] leading-relaxed">Hands-on access to robotics platforms, PCB tooling, and embedded development benches.</p>
+      </div>
+      <div class="reveal card-hover tag-corner border border-line rounded-2xl p-7 bg-paper2/60">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue flex items-center justify-center mb-5"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
+        <h3 class="font-display font-semibold text-[18px] mb-2">Career Growth</h3>
+        <p class="text-soft text-[14.5px] leading-relaxed">Build a portfolio of applied engineering work that speaks for itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOMAINS ================= -->
+<section id="domains" class="bg-ink text-white py-24 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 grid-blueprint opacity-60"></div>
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal mb-16">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Internship Domains</div>
+      <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight max-w-xl">Eleven domains. One engineering floor.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- domain cards -->
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="bot" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Robotics</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="brain-circuit" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Artificial Intelligence</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="cpu" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Embedded Systems</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="wifi" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Internet of Things</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="factory" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Industrial Automation</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="circuit-board" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">PCB Design</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="scan-eye" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Computer Vision</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="git-branch" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">ROS2</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="network" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Machine Learning</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="box" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Product Development</div>
+      </div>
+      <div class="reveal card-hover border border-linedark rounded-2xl p-6 bg-ink2/70">
+        <i data-lucide="flask-conical" class="w-6 h-6 text-blue mb-4"></i>
+        <div class="font-display font-medium text-[16.5px]">Research &amp; Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT INTERNS WILL DO ================= -->
+<section class="bg-paper py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-start">
+    <div class="reveal lg:sticky lg:top-28">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— What Interns Will Do</div>
+      <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight max-w-md">Engineering work, from concept to validation.</h2>
+      <p class="mt-5 text-soft leading-relaxed max-w-md">Interns move across the same stages our engineering team does — design, build, test, and document.</p>
+    </div>
+
+    <div class="reveal grid sm:grid-cols-2 gap-x-8 gap-y-6">
+      <div class="flex items-start gap-3">
+        <i data-lucide="pencil-ruler" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Design engineering solutions</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="cpu" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Build embedded systems</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="brain-circuit" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Develop AI applications</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="bot" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Develop robotic systems</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="wifi" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Create IoT products</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="flask-conical" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Participate in research</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="hammer" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Prototype hardware</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="file-text" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Documentation</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
+        <span class="text-[15px] text-ink/85">Testing &amp; validation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY / LIFE AT IYONEX =================
+     Add your real photos here. Replace each src="assets/gallery-X.jpg"
+     with your own image path, and update the alt text to describe the photo.
+     Recommended photo size: at least 800x800px (square) for best cropping.
+============================================================= -->
+<section id="gallery" class="bg-paper2 py-24 lg:py-32 border-y border-line">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal mb-16 max-w-xl">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Our Journey</div>
+      <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight">Building the Future Together.</h2>
+      <p class="mt-4 text-soft leading-relaxed">Workshops, projects, drones, robotics, and team activities.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Photo 1 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/1.jpeg" alt="Interns working on a robotics project at Iyonex Automation" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 2 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/2.jpeg" alt="Engineering lab and workbench at Iyonex Automation" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 3 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/3.jpeg" alt="Mentor guiding an intern on embedded systems hardware" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 4 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/4.jpeg" alt="PCB and electronics prototyping station" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 5 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/5.jpeg" alt="Team discussion during a technical review" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 6 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/6.jpeg" alt="Robotic arm prototype built by an intern team" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="bg-paper2 py-24 lg:py-32 border-y border-line">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal mb-16 max-w-xl">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Internship Features</div>
+      <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight">What the internship includes.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal bg-paper border border-line rounded-2xl p-6">
+        <i data-lucide="target" class="w-5 h-5 text-blue mb-4"></i>
+        <h3 class="font-semibold text-[15px] mb-1.5">Real Engineering Projects</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Work tied to actual product and research timelines.</p>
+      </div>
+      <div class="reveal bg-paper border border-line rounded-2xl p-6">
+        <i data-lucide="user-check" class="w-5 h-5 text-blue mb-4"></i>
+        <h3 class="font-semibold text-[15px] mb-1.5">Mentorship by Engineers</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Direct guidance from practicing engineers, not TAs.</p>
+      </div>
+      <div class="reveal bg-paper border border-line rounded-2xl p-6">
+        <i data-lucide="wrench" class="w-5 h-5 text-blue mb-4"></i>
+        <h3 class="font-semibold text-[15px] mb-1.5">Hands-on Development</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Build with actual hardware and toolchains.</p>
+      </div>
+      <div class="reveal bg-paper border border-line rounded-2xl p-6">
+        <i data-lucide="lightbulb" class="w-5 h-5 text-blue mb-4"></i>
+        <h3 class="font-semibold text-[15px] mb-1.5">Innovation Driven Environment</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Room to propose ideas and prototype them.</p>
+      </div>
+      <div class="reveal bg-paper border border-line rounded-2xl p-6">
+        <i data-lucide="clipboard-check" class="w-5 h-5 text-blue mb-4"></i>
+        <h3 class="font-semibold text-[15px] mb-1.5">Technical Reviews</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Regular check-ins on design and progress.</p>
+      </div>
+      <div class="reveal bg-paper border border-line rounded-2xl p-6">
+        <i data-lucide="award" class="w-5 h-5 text-blue mb-4"></i>
+        <h3 class="font-semibold text-[15px] mb-1.5">Certificate on Completion</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Issued on successful completion of the internship.</p>
+      </div>
+      <div class="reveal bg-paper border border-line rounded-2xl p-6 sm:col-span-2 lg:col-span-2">
+        <i data-lucide="file-signature" class="w-5 h-5 text-blue mb-4"></i>
+        <h3 class="font-semibold text-[15px] mb-1.5">Letter of Recommendation</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Based on performance, at the mentor's discretion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ELIGIBILITY + DURATION ================= -->
+<section class="bg-paper py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-5 gap-6">
+    <div class="reveal lg:col-span-3 border border-line rounded-3xl p-9 sm:p-11 bg-paper2/50">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Eligibility</div>
+      <h3 class="font-display font-semibold text-[26px] mb-7">Who can apply</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="flex items-center gap-3 text-[14.5px]"><i data-lucide="check" class="w-4 h-4 text-blue"></i>Engineering Students</div>
+        <div class="flex items-center gap-3 text-[14.5px]"><i data-lucide="check" class="w-4 h-4 text-blue"></i>Diploma Students</div>
+        <div class="flex items-center gap-3 text-[14.5px]"><i data-lucide="check" class="w-4 h-4 text-blue"></i>Final Year Students</div>
+        <div class="flex items-center gap-3 text-[14.5px]"><i data-lucide="check" class="w-4 h-4 text-blue"></i>Fresh Graduates</div>
+        <div class="flex items-center gap-3 text-[14.5px] sm:col-span-2"><i data-lucide="check" class="w-4 h-4 text-blue"></i>Passionate Learners</div>
+      </div>
+    </div>
+
+    <div class="reveal lg:col-span-2 rounded-3xl p-9 sm:p-11 bg-ink text-white flex flex-col justify-between relative overflow-hidden">
+      <div class="absolute inset-0 grid-blueprint opacity-50"></div>
+      <div class="relative">
+        <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Duration</div>
+        <h3 class="font-display font-semibold text-[26px] mb-4">Flexible Internship Duration</h3>
+        <p class="text-mist leading-relaxed text-[14.5px]">Duration is set based on project requirements and scope — not a fixed calendar.</p>
+      </div>
+      <i data-lucide="calendar-clock" class="w-8 h-8 text-blue mt-8 relative"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AICTE / INTERNSHIP POLICY ================= -->
+<section id="apply" class="bg-blue-50 py-24 lg:py-32 border-y border-blue/15">
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+    <div class="reveal inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-blue border border-blue/30 bg-white rounded-full px-3.5 py-1.5 mb-7">
+      <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+      Internship Policy
+    </div>
+    <h2 class="reveal font-display font-semibold text-[30px] sm:text-[38px] tracking-tight mb-6">No internship fee. Ever.</h2>
+    <p class="reveal text-ink/75 leading-relaxed text-[16px] sm:text-[17px] max-w-2xl mx-auto">
+      Iyonex Automation provides internship opportunities to eligible students for practical industry exposure through engineering and research projects. The organization does not charge any internship fee from students. Selection is based purely on eligibility, project availability and mentor approval. Internship opportunities are announced based on company requirements.
+    </p>
+    <form id="applyForm" action="https://formsubmit.co/ceo@iyonex.com" method="POST" class="reveal mt-12 text-left bg-paper border border-line rounded-3xl p-6 sm:p-10 max-w-2xl mx-auto">
+      <!-- FormSubmit config -->
+      <input type="hidden" name="_subject" value="New Internship Application - Iyonex Automation">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="sm:col-span-2">
+          <label for="fullName" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">Full Name *</label>
+          <input type="text" id="fullName" name="Full Name" required placeholder="Your full name"
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink placeholder:text-ink/35 focus:outline-none focus:border-blue transition-colors">
+        </div>
+
+        <div>
+          <label for="mobile" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">Mobile Number *</label>
+          <input type="tel" id="mobile" name="Mobile Number" required pattern="[0-9+\s-]{10,15}" placeholder="+91 90000 00000"
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink placeholder:text-ink/35 focus:outline-none focus:border-blue transition-colors">
+        </div>
+
+        <div>
+          <label for="email" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">Email *</label>
+          <input type="email" id="email" name="Email" required placeholder="you@example.com"
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink placeholder:text-ink/35 focus:outline-none focus:border-blue transition-colors">
+        </div>
+
+        <div class="sm:col-span-2">
+          <label for="college" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">College / Institution *</label>
+          <input type="text" id="college" name="College / Institution" required placeholder="Name of your college or university"
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink placeholder:text-ink/35 focus:outline-none focus:border-blue transition-colors">
+        </div>
+
+        <div>
+          <label for="course" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">Course &amp; Year *</label>
+          <input type="text" id="course" name="Course & Year" required placeholder="e.g. B.Tech ECE, 3rd Year"
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink placeholder:text-ink/35 focus:outline-none focus:border-blue transition-colors">
+        </div>
+
+        <div>
+          <label for="domain" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">Domain of Interest *</label>
+          <select id="domain" name="Domain of Interest" required
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink focus:outline-none focus:border-blue transition-colors">
+            <option value="" disabled selected>Select a domain</option>
+            <option>Robotics</option>
+            <option>Artificial Intelligence</option>
+            <option>Embedded Systems</option>
+            <option>IoT</option>
+            <option>Industrial Automation</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="sm:col-span-2">
+          <label for="resume" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">Resume Link</label>
+          <input type="url" id="resume" name="Resume Link" placeholder="Google Drive / LinkedIn link (optional)"
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink placeholder:text-ink/35 focus:outline-none focus:border-blue transition-colors">
+        </div>
+
+        <div class="sm:col-span-2">
+          <label for="message" class="block font-mono text-[11px] tracking-widest uppercase text-ink/60 mb-1.5">Message</label>
+          <textarea id="message" name="Message" rows="3" placeholder="Anything else you'd like us to know (optional)"
+            class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink placeholder:text-ink/35 focus:outline-none focus:border-blue transition-colors resize-none"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 font-semibold text-[15px] px-8 py-4 rounded-full mt-7">
+        Submit Application
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+      <p class="text-ink/50 text-[12.5px] mt-4">Your details are sent securely to our team and are never shared. No internship fee is ever charged.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= APPLICATION PROCESS ================= -->
+<section id="process" class="bg-paper py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal mb-20 max-w-xl">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Application Process</div>
+      <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight">Five steps, start to offer.</h2>
+    </div>
+
+    <div class="relative grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
+      <div class="hidden lg:block absolute top-6 left-[10%] right-[10%] h-px bg-line"></div>
+
+      <div class="reveal relative">
+        <div class="w-12 h-12 rounded-full bg-ink text-white font-mono text-[15px] flex items-center justify-center mb-5 relative z-10">01</div>
+        <h3 class="font-display font-semibold text-[16px] mb-1.5">Apply</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Submit your application with your resume.</p>
+      </div>
+      <div class="reveal relative">
+        <div class="w-12 h-12 rounded-full bg-ink text-white font-mono text-[15px] flex items-center justify-center mb-5 relative z-10">02</div>
+        <h3 class="font-display font-semibold text-[16px] mb-1.5">Resume Screening</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Your profile is reviewed against open project needs.</p>
+      </div>
+      <div class="reveal relative">
+        <div class="w-12 h-12 rounded-full bg-ink text-white font-mono text-[15px] flex items-center justify-center mb-5 relative z-10">03</div>
+        <h3 class="font-display font-semibold text-[16px] mb-1.5">Technical Discussion</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">A conversation on your fundamentals and interests.</p>
+      </div>
+      <div class="reveal relative">
+        <div class="w-12 h-12 rounded-full bg-ink text-white font-mono text-[15px] flex items-center justify-center mb-5 relative z-10">04</div>
+        <h3 class="font-display font-semibold text-[16px] mb-1.5">Project Allocation</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">You're placed on a project matched to your domain.</p>
+      </div>
+      <div class="reveal relative">
+        <div class="w-12 h-12 rounded-full bg-blue text-white font-mono text-[15px] flex items-center justify-center mb-5 relative z-10">05</div>
+        <h3 class="font-display font-semibold text-[16px] mb-1.5">Internship Offer</h3>
+        <p class="text-soft text-[13.5px] leading-relaxed">Confirmed offer, and you begin work with your mentor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="bg-paper2 py-24 lg:py-32 border-t border-line">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10">
+    <div class="reveal mb-14">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— FAQ</div>
+      <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight">Common questions.</h2>
+    </div>
+
+    <div class="reveal space-y-3">
+      <div class="faq-item border border-line rounded-2xl bg-paper overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-6 py-5 font-semibold text-[15.5px]">
+          Is the internship free?
+          <i data-lucide="plus" class="chev w-4 h-4 text-blue shrink-0"></i>
+        </button>
+        <div class="faq-content px-6">
+          <p class="text-soft text-[14.5px] leading-relaxed pb-5">Yes. Iyonex Automation does not charge any internship fee.</p>
+        </div>
+      </div>
+      <div class="faq-item border border-line rounded-2xl bg-paper overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-6 py-5 font-semibold text-[15.5px]">
+          Do I receive a certificate?
+          <i data-lucide="plus" class="chev w-4 h-4 text-blue shrink-0"></i>
+        </button>
+        <div class="faq-content px-6">
+          <p class="text-soft text-[14.5px] leading-relaxed pb-5">Yes, a certificate is issued after successful completion of the internship.</p>
+        </div>
+      </div>
+      <div class="faq-item border border-line rounded-2xl bg-paper overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-6 py-5 font-semibold text-[15.5px]">
+          Will I work on real projects?
+          <i data-lucide="plus" class="chev w-4 h-4 text-blue shrink-0"></i>
+        </button>
+        <div class="faq-content px-6">
+          <p class="text-soft text-[14.5px] leading-relaxed pb-5">Yes, interns contribute directly to real engineering projects at Iyonex Automation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="bg-ink text-white py-24 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 grid-blueprint"></div>
+  <div class="relative max-w-4xl mx-auto px-6 lg:px-10 text-center">
+    <div class="reveal font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Contact</div>
+    <h2 class="reveal font-display font-semibold text-[32px] sm:text-[42px] tracking-tight mb-10">Iyonex Automation</h2>
+    <div class="reveal glass border border-linedark rounded-3xl px-8 py-10 sm:px-14 sm:py-12 inline-flex flex-col sm:flex-row gap-8 sm:gap-16">
+      <a href="https://iyonex.com" target="_blank" rel="noopener" class="flex flex-col items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl border border-linedark flex items-center justify-center group-hover:border-blue transition-colors"><i data-lucide="globe" class="w-5 h-5 text-blue"></i></div>
+        <div class="font-mono text-[10px] tracking-widest uppercase text-mist">Website</div>
+        <div class="text-[15px] font-medium">iyonex.com</div>
+      </a>
+      <a href="mailto:ceo@iyonex.com" class="flex flex-col items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl border border-linedark flex items-center justify-center group-hover:border-blue transition-colors"><i data-lucide="mail" class="w-5 h-5 text-blue"></i></div>
+        <div class="font-mono text-[10px] tracking-widest uppercase text-mist">Email</div>
+        <div class="text-[15px] font-medium">ceo@iyonex.com</div>
+      </a>
+      <a href="https://maps.google.com/?q=5+Seenuvasa+Counder+St,+Sellaperumal+Pet,+Lawspet,+Pondicherry+605008" target="_blank" rel="noopener" class="flex flex-col items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl border border-linedark flex items-center justify-center group-hover:border-blue transition-colors"><i data-lucide="map-pin" class="w-5 h-5 text-blue"></i></div>
+        <div class="font-mono text-[10px] tracking-widest uppercase text-mist">Location</div>
+        <div class="text-[15px] font-medium max-w-[220px] leading-snug">5 Seenuvasa Counder St, Sellaperumal Pet, Lawspet, Pondicherry 605008</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-ink text-mist border-t border-linedark">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="lg:col-span-2">
+      <div class="flex items-center gap-2.5 mb-4">
+        <img src="assets/logo-white.png" alt="Iyonex Automation" class="h-[20px] w-auto">
+      </div>
+      <p class="text-[13.5px] leading-relaxed max-w-xs">Robotics, Artificial Intelligence, Embedded Systems, IoT, Industrial Automation, Product Development and Engineering Research.</p>
+      <div class="flex items-center gap-3 mt-6">
+        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-linedark flex items-center justify-center hover:border-blue hover:text-blue transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        <a href="#" aria-label="GitHub" class="w-9 h-9 rounded-full border border-linedark flex items-center justify-center hover:border-blue hover:text-blue transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+    <div>
+      <div class="font-mono text-[10.5px] tracking-widest uppercase text-white mb-4">Company</div>
+      <ul class="space-y-2.5 text-[13.5px]">
+        <li><a href="#why" class="hover:text-blue transition-colors">Why Iyonex</a></li>
+        <li><a href="#domains" class="hover:text-blue transition-colors">Domains</a></li>
+        <li><a href="#process" class="hover:text-blue transition-colors">Process</a></li>
+        <li><a href="#contact" class="hover:text-blue transition-colors">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-mono text-[10.5px] tracking-widest uppercase text-white mb-4">Legal</div>
+      <ul class="space-y-2.5 text-[13.5px]">
+        <li><a href="#" class="hover:text-blue transition-colors">Privacy Policy</a></li>
+        <li><a href="#apply" class="hover:text-blue transition-colors">Internship Policy</a></li>
+        <li><a href="#" class="hover:text-blue transition-colors">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-linedark">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[10.5px] tracking-wider uppercase">
+      <span>© 2024–<span id="curYear">2026</span> Iyonex Automation. All rights reserved.</span>
+      <span>5 Seenuvasa Counder St, Sellaperumal Pet, Lawspet, Pondicherry 605008</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide) lucide.createIcons();
+
+    const curYear = document.getElementById('curYear');
+    if (curYear) curYear.textContent = new Date().getFullYear();
+
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIconOpen = document.getElementById('menuIconOpen');
+    const menuIconClose = document.getElementById('menuIconClose');
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle('hidden', !open);
+      menuIconOpen.classList.toggle('hidden', open);
+      menuIconClose.classList.toggle('hidden', !open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    menuBtn?.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+    // faq accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const btn = item.querySelector('.faq-toggle');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', () => {
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // active nav link on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(navLinks)
+      .map(l => document.querySelector(l.getAttribute('href')))
+      .filter(Boolean);
+    const navIo = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const id = '#' + e.target.id;
+        const link = document.querySelector(`.nav-link[href="${id}"]`);
+        if (!link) return;
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('text-blue'));
+          link.classList.add('text-blue');
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    sections.forEach(s => navIo.observe(s));
+
+    // application form — AJAX submit via FormSubmit, no page reload
+    const applyForm = document.getElementById('applyForm');
+    if (applyForm) {
+      applyForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = applyForm.querySelector('button[type="submit"]');
+        const originalBtnHTML = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Submitting…';
+
+        let feedback = applyForm.querySelector('.form-feedback');
+        if (!feedback) {
+          feedback = document.createElement('p');
+          feedback.className = 'form-feedback text-[13.5px] mt-4';
+          applyForm.appendChild(feedback);
+        }
+
+        try {
+          const endpoint = 'https://formsubmit.co/ajax/' + applyForm.action.split('/').pop();
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(applyForm)
+          });
+          if (!res.ok) throw new Error('Request failed');
+          applyForm.reset();
+          feedback.textContent = "Thanks! Your application has been received — we'll get back to you by email.";
+          feedback.classList.add('text-blue');
+        } catch (err) {
+          feedback.textContent = "Something went wrong sending your application. Please email ceo@iyonex.com directly.";
+          feedback.classList.add('text-red-600');
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = originalBtnHTML;
+        }
+      });
+    }
+  });
+
+  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
+</script>
+</body>
+</html>
