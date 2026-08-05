@@ -177,6 +177,8 @@
   }
 
   .card-hover{ transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s; }
+  .gallery-item img{ transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .gallery-item:hover img{ transform: scale(1.06); }
   .card-hover:hover{ transform: translateY(-4px); border-color: rgba(10,124,255,0.5); box-shadow: 0 20px 40px -20px rgba(10,124,255,0.25); }
 
   .tag-corner{ position:relative; }
@@ -228,6 +230,7 @@
     <nav class="hidden lg:flex items-center gap-8 font-medium text-[14.5px] text-ink/80">
       <a href="#why" class="nav-link hover:text-blue transition-colors">Why Iyonex</a>
       <a href="#domains" class="nav-link hover:text-blue transition-colors">Domains</a>
+      <a href="#gallery" class="nav-link hover:text-blue transition-colors">Gallery</a>
       <a href="#process" class="nav-link hover:text-blue transition-colors">Process</a>
       <a href="#faq" class="nav-link hover:text-blue transition-colors">FAQ</a>
       <a href="#contact" class="nav-link hover:text-blue transition-colors">Contact</a>
@@ -244,6 +247,7 @@
   <div id="mobileMenu" class="lg:hidden hidden border-t border-line bg-paper px-6 py-5 flex flex-col gap-4 font-medium">
     <a href="#why" class="py-1">Why Iyonex</a>
     <a href="#domains" class="py-1">Domains</a>
+    <a href="#gallery" class="py-1">Gallery</a>
     <a href="#process" class="py-1">Process</a>
     <a href="#faq" class="py-1">FAQ</a>
     <a href="#contact" class="py-1">Contact</a>
@@ -492,6 +496,48 @@
       <div class="flex items-start gap-3">
         <i data-lucide="check-circle-2" class="w-5 h-5 text-blue mt-0.5 shrink-0"></i>
         <span class="text-[15px] text-ink/85">Testing &amp; validation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY / LIFE AT IYONEX =================
+     Add your real photos here. Replace each src="assets/gallery-X.jpg"
+     with your own image path, and update the alt text to describe the photo.
+     Recommended photo size: at least 800x800px (square) for best cropping.
+============================================================= -->
+<section id="gallery" class="bg-paper2 py-24 lg:py-32 border-y border-line">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal mb-16 max-w-xl">
+      <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-blue mb-3">— Our Journey</div>
+      <h2 class="font-display font-semibold text-[32px] sm:text-[40px] tracking-tight">Building the Future Together.</h2>
+      <p class="mt-4 text-soft leading-relaxed">Workshops, projects, drones, robotics, and team activities.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Photo 1 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/1.jpeg" alt="Interns working on a robotics project at Iyonex Automation" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 2 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/2.jpeg" alt="Engineering lab and workbench at Iyonex Automation" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 3 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/3.jpeg" alt="Mentor guiding an intern on embedded systems hardware" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 4 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/4.jpeg" alt="PCB and electronics prototyping station" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 5 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/5.jpeg" alt="Team discussion during a technical review" class="w-full h-full object-cover">
+      </div>
+      <!-- Photo 6 -->
+      <div class="reveal tag-corner gallery-item relative aspect-square rounded-2xl overflow-hidden border border-line bg-ink2">
+        <img src="assets/6.jpeg" alt="Robotic arm prototype built by an intern team" class="w-full h-full object-cover">
       </div>
     </div>
   </div>
