@@ -11,8 +11,8 @@ home_body = f"""
     <div class="wrap hero-inner" style="position:relative;z-index:1;">
       <div>
         <div class="hero-tag reveal"><span class="dot"></span>AUTONOMOUS INDUSTRIAL ROBOTICS</div>
-        <h1 class="h1 grad-text reveal">Intelligent robotics for smarter factories.</h1>
-        <p class="hero-sub reveal">Autonomous robotics and industrial automation designed to transform material movement, factory operations and industrial workflows.</p>
+        <h1 class="h1 grad-text reveal">Simple robotics for smarter factories.</h1>
+        <p class="hero-sub reveal">We are developing easy-to-use autonomous material movement for small and medium factories, alongside embedded systems and practical automation engineering.</p>
         <div class="btn-row reveal">
           <a href="solutions.html" class="btn btn-primary">Explore Solutions <span class="arrow" aria-hidden="true">&rarr;</span></a>
           <a href="contact.html" class="btn btn-ghost">Talk to Iyonex</a>
@@ -26,7 +26,7 @@ home_body = f"""
 
   <section class="section">
     <div class="wrap">
-      {section_head("THE PROBLEM", "Factories are automated. Material movement still isn&rsquo;t.",
+      {section_head("THE PROBLEM", "Material movement is still a bottleneck in many factories.",
                      "Modern factories run advanced machines, but material still moves between them by forklift, fixed conveyor and manual handling.")}
       {grid(4, [
         tile("", "Manual Dependency", "Repetitive material transportation still depends heavily on human effort."),
@@ -43,9 +43,9 @@ home_body = f"""
       <div class="reveal">
         <div class="eyebrow">FLAGSHIP SOLUTION</div>
         <h2 class="h2" style="margin-bottom:10px;">Move materials. Not people.</h2>
-        <p class="body-copy" style="margin-bottom:26px;">The Iyonex Autonomous Material Movement Platform automates repetitive transportation across factories and warehouses &mdash; sensing, planning and coordinating without fixed rails or wires.</p>
+        <p class="body-copy" style="margin-bottom:26px;">Our AMR vision is simple: map the workspace, choose pickup and drop-off points, and manage repetitive material transport through a clear operator interface. The platform is in development; pilot requirements and demonstrated features are confirmed through discussion.</p>
         <div class="badge-row" style="margin-bottom:30px;">
-          {"".join(f'<span class="badge">{f}</span>' for f in ["Autonomous navigation","Multi-robot coordination","Real-time monitoring","Factory integration"])}
+          {"".join(f'<span class="badge">{f}</span>' for f in ["Simple setup vision","Flexible destinations","Operator-friendly controls","In development"])}
         </div>
         <a href="amr.html" class="btn btn-primary">Explore AMR Platform <span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
@@ -82,6 +82,17 @@ home_body = f"""
     </div>
   </section>
 
+  <section class="section" id="learn-with-us">
+    <div class="wrap">
+      <div class="eyebrow">LEARN WITH IYONEX</div>
+      <h2 class="h2">Build skills by building systems.</h2>
+      <p class="lede">Explore project-based robotics and embedded learning, or bring a technical workshop to your institution.</p>
+      <div class="grid-2" style="margin-top:30px;">
+        <article class="tile"><h3>Internships</h3><p>Explore robotics, AMR and embedded systems domains. Enquire about current availability and program terms.</p><a class="tile-link" href="internships.html">Explore internships &rarr;</a></article>
+        <article class="tile"><h3>Workshops</h3><p>Discuss a practical session around sensors, microcontrollers, robot systems and intelligent motion.</p><a class="tile-link" href="workshops.html">Plan a workshop &rarr;</a></article>
+      </div>
+    </div>
+  </section>
   <section class="vision">
     <div class="aurora"></div>
     <div class="blueprint-bg"></div>
@@ -116,25 +127,24 @@ solutions_body = f"""
     </div>
   </section>
 
-  <section class="section" id="amr">
+  <section class="section" id="automation"><span id="amr"></span>
     <div class="wrap">
       {grid(3, [
         tile("01", "Autonomous Mobile Robots", "Intelligent mobile robots for autonomous industrial material transportation, built for dynamic factory floors.", "amr.html"),
-        tile("02", "Industrial Automation", "Automation systems connecting machines, sensors, controllers and robotic platforms into one coordinated operation."),
+        tile("02", "Industrial Automation", "Automation systems connecting machines, sensors, controllers and robotic platforms into one coordinated operation.", "contact.html", "Discuss automation"),
         tile("03", "Robot Intelligence", "Navigation, perception, planning and autonomous decision-making that let a robot operate safely without constant supervision."),
       ])}
     </div>
   </section>
 
   <section class="section section--tight" id="integration" style="background:var(--bg-raised);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);">
-    <div class="wrap">
+    <div class="wrap" id="software">
       {grid(2, [
         tile("04", "Factory Integration", "Connecting robotic systems with existing factory workflows, machines and infrastructure &mdash; so automation fits into how a plant already runs, rather than forcing a rebuild around it."),
         tile("05", "Robotics Software", "Control, monitoring, fleet management and system integration software that keeps robotic operations visible and manageable from a single place."),
       ])}
     </div>
-    <a name="software"></a>
-    <a name="automation"></a>
+
   </section>
 
   {cta_band("Have a material movement challenge in mind?",
@@ -159,3 +169,4 @@ PAGES.extend(PAGES_TECH)
 PAGES.extend(PAGES_IND)
 PAGES.extend(PAGES_LEARN)
 PAGES.extend(PAGES_AC)
+

@@ -65,3 +65,4 @@ PAGES_TECH.append(("technology.html", {
     "desc": "Robotics, embedded systems, autonomous systems, industrial automation and software \u2014 the interconnected technology stack behind Iyonex Automation.",
     "active": "technology",
 }, body))
+

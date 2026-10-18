@@ -15,3 +15,4 @@ IMG_HEAVY_INDUSTRY   = _u("photo-1701328778019-e95dedbf5346")   # factory filled
 IMG_ELECTRONICS      = _u("photo-1647427060118-4911c9821b82")   # factory floor with orange machines
 IMG_WORKSHOP_STUDENT = _u("photo-1581092160607-ee22621dd758")   # student operating machinery in a workshop
 IMG_TEAM_ENGINEERING = _u("photo-1581091226033-d5c48150dbaa")   # engineers reviewing work on a laptop
+

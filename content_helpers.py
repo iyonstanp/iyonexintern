@@ -83,8 +83,8 @@ def hero_svg(label="AMR\u201301"):
     return f"""
     <div class="corner-mark tl"></div><div class="corner-mark tr"></div>
     <div class="corner-mark bl"></div><div class="corner-mark br"></div>
-    <div class="hero-readout r1"><span class="dot"></span>NAV: ACTIVE</div>
-    <div class="hero-readout r2"><span class="dot sv-blink"></span>PATH: OPTIMIZING</div>
+    <div class="hero-readout r1"><span class="dot"></span>AMR ROUTE CONCEPT</div>
+    <div class="hero-readout r2"><span class="dot sv-blink"></span>ILLUSTRATIVE SCHEMATIC</div>
     <svg viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic top-down diagram of an autonomous mobile robot navigating between storage racks on a factory floor">
       <!-- rack zones -->
       <rect x="34" y="34" width="86" height="196" class="sv-line" stroke-width="1"></rect>
@@ -124,13 +124,6 @@ def hero_svg(label="AMR\u201301"):
     """
 
 
-def hero_3d(tag1="NETWORK: SYNCED", tag2="FLEET: 46 NODES"):
-    """Cinematic 3D node-network hero, rendered client-side by hero3d.js.
-    Degrades gracefully (readouts + corner marks only) if JS/WebGL is unavailable."""
-    return f"""
-    <div class="corner-mark tl"></div><div class="corner-mark tr"></div>
-    <div class="corner-mark bl"></div><div class="corner-mark br"></div>
-    <div class="hero-readout r1"><span class="dot"></span>{tag1}</div>
-    <div class="hero-readout r2"><span class="dot sv-blink"></span>{tag2}</div>
-    <div data-hero3d style="position:absolute;inset:0;"></div>
-    """
+def hero_3d(tag1="", tag2=""):
+    """Static, accessible AMR concept schematic; never presented as telemetry."""
+    return hero_svg("IYONEX AMR CONCEPT")
