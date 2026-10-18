@@ -10,3 +10,4 @@ COMPANY_ADDRESS_LINE2 = "Puducherry 605008, India"
 COMPANY_ADDRESS_FULL  = "Lawspet, Puducherry 605008, India"
 COMPANY_LINKEDIN = "https://www.linkedin.com/in/iyonstan-p-ba5a06251/"
 COMPANY_DOMAIN   = "https://www.iyonex.com/"
+

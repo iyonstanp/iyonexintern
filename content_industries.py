@@ -51,3 +51,4 @@ PAGES_IND.append(("industries.html", {
     "desc": "Iyonex Automation applies autonomous robotics and industrial automation across automotive, manufacturing, electronics, warehousing and heavy industry.",
     "active": "industries",
 }, body))
+

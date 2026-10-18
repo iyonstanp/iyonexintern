@@ -7,11 +7,13 @@
 <meta name="description" content="Iyonex Automation develops intelligent robotics, Autonomous Mobile Robots and industrial automation solutions for modern factories.">
 <link rel="canonical" href="https://www.iyonex.com/" />
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.iyonex.com/">
 <meta property="og:title" content="Iyonex Automation | Intelligent Robotics & Industrial Automation">
 <meta property="og:description" content="Iyonex Automation develops intelligent robotics, Autonomous Mobile Robots and industrial automation solutions for modern factories.">
-<meta property="og:image" content="assets/iyonex-logo.png">
+<meta property="og:image" content="https://www.iyonex.com/assets/og-image.png">
+<meta property="og:image:alt" content="Iyonex Automation — robotics and industrial automation">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {
@@ -19,7 +21,7 @@
   "@type": "Organization",
   "name": "Iyonex Automation",
   "url": "https://www.iyonex.com/",
-  "logo": "https://www.iyonex.com/assets/iyonex-logo.png",
+  "logo": "https://www.iyonex.com/assets/logo.png",
   "email": "ceo@iyonex.com",
   "telephone": "+91 81110 80117",
   "address": {
@@ -29,7 +31,7 @@
     "postalCode": "605008",
     "addressCountry": "IN"
   },
-  "sameAs": ["https://www.linkedin.com/in/iyonstan-p-ba5a06251/"]
+  "areaServed": "India"
 }
 </script>
 
@@ -40,7 +42,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo" aria-label="Iyonex Automation — home">
-        <img src="assets/iyonex-logo.png" alt="Iyonex" class="logo-img">
+        <img src="assets/logo.png" alt="Iyonex" class="logo-img">
         <span class="logo-sub">AUTOMATION</span>
       </a>
 
@@ -110,8 +112,8 @@
     <div class="wrap hero-inner" style="position:relative;z-index:1;">
       <div>
         <div class="hero-tag reveal"><span class="dot"></span>AUTONOMOUS INDUSTRIAL ROBOTICS</div>
-        <h1 class="h1 grad-text reveal">Intelligent robotics for smarter factories.</h1>
-        <p class="hero-sub reveal">Autonomous robotics and industrial automation designed to transform material movement, factory operations and industrial workflows.</p>
+        <h1 class="h1 grad-text reveal">Simple robotics for smarter factories.</h1>
+        <p class="hero-sub reveal">We are developing easy-to-use autonomous material movement for small and medium factories, alongside embedded systems and practical automation engineering.</p>
         <div class="btn-row reveal">
           <a href="solutions.html" class="btn btn-primary">Explore Solutions <span class="arrow" aria-hidden="true">&rarr;</span></a>
           <a href="contact.html" class="btn btn-ghost">Talk to Iyonex</a>
@@ -121,9 +123,44 @@
         
     <div class="corner-mark tl"></div><div class="corner-mark tr"></div>
     <div class="corner-mark bl"></div><div class="corner-mark br"></div>
-    <div class="hero-readout r1"><span class="dot"></span>NETWORK: SYNCED</div>
-    <div class="hero-readout r2"><span class="dot sv-blink"></span>FLEET: 46 NODES</div>
-    <div data-hero3d style="position:absolute;inset:0;"></div>
+    <div class="hero-readout r1"><span class="dot"></span>AMR ROUTE CONCEPT</div>
+    <div class="hero-readout r2"><span class="dot sv-blink"></span>ILLUSTRATIVE SCHEMATIC</div>
+    <svg viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic top-down diagram of an autonomous mobile robot navigating between storage racks on a factory floor">
+      <!-- rack zones -->
+      <rect x="34" y="34" width="86" height="196" class="sv-line" stroke-width="1"></rect>
+      <rect x="360" y="196" width="86" height="196" class="sv-line" stroke-width="1"></rect>
+      <text x="40" y="26" class="sv-text" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;">RACK ZONE A</text>
+      <text x="366" y="404" class="sv-text" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;">RACK ZONE B</text>
+
+      <!-- travelled path -->
+      <polyline points="70,392 150,350 208,282 230,206" fill="none" class="sv-blue sv-path" stroke-width="1.5"></polyline>
+      <circle cx="70" cy="392" r="4" class="sv-blue-fill"></circle>
+      <circle cx="150" cy="350" r="3.5" class="sv-blue-fill" opacity="0.6"></circle>
+      <circle cx="208" cy="282" r="3.5" class="sv-blue-fill" opacity="0.6"></circle>
+
+      <!-- planned path ahead -->
+      <polyline points="240,150 300,92" fill="none" class="sv-dim sv-path" stroke-width="1" stroke-dasharray="3 5"></polyline>
+      <circle cx="300" cy="92" r="9" class="sv-blue" stroke-width="1.3" fill="none"></circle>
+      <circle cx="300" cy="92" r="3" class="sv-blue-fill sv-blink"></circle>
+      <text x="312" y="88" class="sv-text" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.5px;">TARGET</text>
+
+      <!-- sensor field of view -->
+      <path d="M240,150 L205,90 A70,70 0 0 1 275,90 Z" class="sv-blue" fill="var(--blue)" fill-opacity="0.06" stroke-width="0.75" opacity="0.8"></path>
+
+      <!-- radar sweep -->
+      <g class="sv-scan" style="transform-origin:240px 150px;">
+        <line x1="240" y1="150" x2="240" y2="96" class="sv-blue" stroke-width="1"></line>
+      </g>
+
+      <!-- robot chassis -->
+      <g transform="translate(240,150)">
+        <rect x="-22" y="-22" width="44" height="44" rx="6" fill="var(--surface-2)" class="sv-blue" stroke-width="1.4"></rect>
+        <path d="M-8,-22 L0,-32 L8,-22 Z" class="sv-blue-fill"></path>
+        <circle cx="0" cy="0" r="7" class="sv-blue" stroke-width="1.2" fill="none"></circle>
+        <circle cx="0" cy="0" r="2.4" class="sv-blue-fill"></circle>
+      </g>
+      <text x="256" y="176" class="sv-text" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.5px;">IYONEX AMR CONCEPT</text>
+    </svg>
     
       </div>
     </div>
@@ -134,7 +171,7 @@
       
     <div class="section-head reveal">
       <div class="eyebrow">THE PROBLEM</div>
-      <h2 class="h2">Factories are automated. Material movement still isn&rsquo;t.</h2>
+      <h2 class="h2">Material movement is still a bottleneck in many factories.</h2>
       <p class="lede" style="margin-top:16px">Modern factories run advanced machines, but material still moves between them by forklift, fixed conveyor and manual handling.</p>
     </div>
       <div class="grid-4">
@@ -179,9 +216,9 @@
       <div class="reveal">
         <div class="eyebrow">FLAGSHIP SOLUTION</div>
         <h2 class="h2" style="margin-bottom:10px;">Move materials. Not people.</h2>
-        <p class="body-copy" style="margin-bottom:26px;">The Iyonex Autonomous Material Movement Platform automates repetitive transportation across factories and warehouses &mdash; sensing, planning and coordinating without fixed rails or wires.</p>
+        <p class="body-copy" style="margin-bottom:26px;">Our AMR vision is simple: map the workspace, choose pickup and drop-off points, and manage repetitive material transport through a clear operator interface. The platform is in development; pilot requirements and demonstrated features are confirmed through discussion.</p>
         <div class="badge-row" style="margin-bottom:30px;">
-          <span class="badge">Autonomous navigation</span><span class="badge">Multi-robot coordination</span><span class="badge">Real-time monitoring</span><span class="badge">Factory integration</span>
+          <span class="badge">Simple setup vision</span><span class="badge">Flexible destinations</span><span class="badge">Operator-friendly controls</span><span class="badge">In development</span>
         </div>
         <a href="amr.html" class="btn btn-primary">Explore AMR Platform <span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
@@ -289,6 +326,17 @@
     </div>
   </section>
 
+  <section class="section" id="learn-with-us">
+    <div class="wrap">
+      <div class="eyebrow">LEARN WITH IYONEX</div>
+      <h2 class="h2">Build skills by building systems.</h2>
+      <p class="lede">Explore project-based robotics and embedded learning, or bring a technical workshop to your institution.</p>
+      <div class="grid-2" style="margin-top:30px;">
+        <article class="tile"><h3>Internships</h3><p>Explore robotics, AMR and embedded systems domains. Enquire about current availability and program terms.</p><a class="tile-link" href="internships.html">Explore internships &rarr;</a></article>
+        <article class="tile"><h3>Workshops</h3><p>Discuss a practical session around sensors, microcontrollers, robot systems and intelligent motion.</p><a class="tile-link" href="workshops.html">Plan a workshop &rarr;</a></article>
+      </div>
+    </div>
+  </section>
   <section class="vision">
     <div class="aurora"></div>
     <div class="blueprint-bg"></div>
@@ -320,7 +368,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="logo" aria-label="Iyonex Automation — home">
-            <img src="assets/iyonex-logo.png" alt="Iyonex" class="logo-img logo-img--lg">
+            <img src="assets/logo.png" alt="Iyonex" class="logo-img logo-img--lg">
           </a>
           <p>Intelligent robotics. Smarter factories.<br>Autonomous mobile robots and industrial automation, engineered for real-world factory deployment.</p>
         </div>
@@ -351,21 +399,19 @@
           </ul>
           <h4 style="margin-top:26px;">Connect</h4>
           <ul>
-            <li><a href="https://www.linkedin.com/in/iyonstan-p-ba5a06251/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/iyonstan-p-ba5a06251/" target="_blank" rel="noopener">Founder on LinkedIn</a></li>
             <li><a href="mailto:ceo@iyonex.com">ceo@iyonex.com</a></li>
             <li><a href="tel:+918111080117">+91 81110 80117</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Iyonex Automation. All rights reserved.</span>
-        <span>Lawspet, Puducherry 605008, India &nbsp;&middot;&nbsp; <a href="mailto:ceo@iyonex.com" style="color:var(--text-dim)">ceo@iyonex.com</a> &nbsp;&middot;&nbsp; <a href="admin-login.html" rel="nofollow" style="color:var(--text-faint);font-size:0.78rem;">Staff Login</a></span>
+        <span>&copy; 2026 Iyonex Automation. All rights reserved. &nbsp; <a href="privacy.html">Privacy</a></span>
+        <span>Lawspet, Puducherry 605008, India &nbsp;&middot;&nbsp; <a href="mailto:ceo@iyonex.com" style="color:var(--text-dim)">ceo@iyonex.com</a></span>
       </div>
     </div>
   </footer>
 
 <script src="js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="js/hero3d.js"></script>
 </body>
 </html>

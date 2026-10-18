@@ -79,8 +79,8 @@ internship_body = f"""
         <h1 class="h1 grad-text reveal" style="font-size:clamp(2.2rem,4.4vw,3.2rem);">Build. Learn. Experience real engineering.</h1>
         <p class="hero-sub reveal">Iyonex Automation offers practical learning opportunities for students and aspiring engineers interested in robotics, automation and intelligent systems.</p>
         <div class="btn-row reveal">
-          <a href="#apply" class="btn btn-primary">Apply for Internship <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          <a href="#domains" class="btn btn-ghost">View Openings</a>
+          <a href="#apply" class="btn btn-primary">Enquire About an Internship <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a href="#domains" class="btn btn-ghost">Explore Domains</a>
         </div>
       </div>
       <div class="reveal" style="border:1px solid var(--line);overflow:hidden;box-shadow:0 24px 60px -24px rgba(46,60,90,0.18);aspect-ratio:4/3.4;">
@@ -103,7 +103,7 @@ internship_body = f"""
 
   <section class="section section--tight" id="domains" style="background:var(--bg-raised);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);">
     <div class="wrap">
-      {section_head("INTERNSHIP DOMAINS", "Where you can contribute.", "Only domains that are currently active are open for application; others are marked coming soon.")}
+      {section_head("INTERNSHIP DOMAINS", "Where you can contribute.", "Explore the domains below. Contact us to confirm current openings; domains marked coming soon are not open for applications.")}
       {grid(3, [
         tile("", "Robotics", "Robot architecture, mechanisms, sensors and robotic systems."),
         tile("", "Autonomous Mobile Robots", "Navigation, localization, obstacle avoidance and autonomous movement."),
@@ -118,8 +118,9 @@ internship_body = f"""
   <section class="section">
     <div class="wrap">
       {section_head("INTERNSHIP PROCESS", "From application to completion.", "")}
+      <div class="note-box"><strong>Before you apply:</strong> ask us to confirm eligibility, duration, schedule, location or online format, fees or stipend, project scope and certificate requirements. These terms are program-specific and are not yet published as fixed offers.</div>
       {process([
-        process_step("01", "Apply", "Submit your internship application."),
+        process_step("01", "Enquire", "Email your learning interests and availability."),
         process_step("02", "Screening", "Application and technical background are reviewed."),
         process_step("03", "Selection", "Selected candidates receive further communication."),
         process_step("04", "Learn", "Get introduced to the relevant technology and engineering environment."),
@@ -136,7 +137,8 @@ internship_body = f"""
     <div class="wrap" style="max-width:760px;">
       {section_head("APPLY", "Ready to build your engineering skills?",
                      "Explore practical opportunities in robotics, automation and emerging industrial technologies.")}
-      <form class="reveal" data-demo-form data-store-key="internship">
+      <p class="note-box">This form prepares an email draft. You must send it from your email app. No application is submitted or saved by this website. Read our <a href="privacy.html">privacy notice</a>.</p>
+      <form class="reveal" action="mailto:ceo@iyonex.com" method="post" enctype="text/plain" data-email-form data-enquiry="internship">
         <div class="form-grid">
           <div class="field"><label for="i-name">Full Name</label><input id="i-name" name="name" type="text" required></div>
           <div class="field"><label for="i-email">Email</label><input id="i-email" name="email" type="email" required></div>
@@ -150,20 +152,19 @@ internship_body = f"""
               <option>Robotics</option>
               <option>AMR / Autonomous Systems</option>
               <option>Embedded Systems</option>
-              <option>Industrial Automation</option>
+              <option disabled>Industrial Automation — coming soon</option>
               <option>Robotics Software</option>
-              <option>AI / Computer Vision</option>
+              <option disabled>AI / Computer Vision — coming soon</option>
               <option>Other</option>
             </select>
           </div>
           <div class="field full">
-            <label for="i-resume">Resume Upload</label>
-            <div class="field-file">Drag and drop, or click to attach your resume (PDF) &mdash; placeholder, not yet connected</div>
+            <p class="note-box"><strong>Resume:</strong> attach your PDF resume in your email app after preparing the enquiry. This website does not upload or store resumes.</p>
           </div>
           <div class="field full"><label for="i-portfolio">Portfolio / LinkedIn</label><input id="i-portfolio" name="portfolio" type="url"></div>
           <div class="field full"><label for="i-why">Why do you want to intern with Iyonex?</label><textarea id="i-why" name="why"></textarea></div>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-top:26px;">Submit Application</button>
+        <button type="submit" class="btn btn-primary" style="margin-top:26px;">Prepare Internship Email</button>
         <p class="form-status" style="display:none;margin-top:16px;color:var(--text-dim);font-size:0.9rem;"></p>
       </form>
     </div>
@@ -195,7 +196,7 @@ workshop_body = f"""
 
   <section class="section">
     <div class="wrap">
-      {section_head("WORKSHOP CATEGORIES", "Only workshops we actually plan to conduct.", "")}
+      {section_head("WORKSHOP CATEGORIES", "Explore workshop topics.", "")}
       {grid(3, [
         tile("", "Robotics Fundamentals", "Introduction to robotic systems, components, sensors and control."),
         tile("", "Autonomous Mobile Robots", "Understand how AMRs navigate, perceive and move through dynamic environments."),
@@ -209,7 +210,7 @@ workshop_body = f"""
 
   <section class="section section--tight" style="background:var(--bg-raised);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);">
     <div class="wrap">
-      {section_head("WORKSHOP FORMAT", "Designed around practical learning.", "")}
+      {section_head("WORKSHOP FORMAT", "Designed around practical learning.", "For a workshop proposal, share participant level, preferred topic, group size and location. We will confirm the syllabus, duration, prerequisites, equipment, fees and expected output before booking.")}
       {grid(4, [
         tile("", "Technical Concepts", "Understand the engineering fundamentals."),
         tile("", "Live Demonstrations", "See robotics and automation systems operating in practice."),
@@ -223,7 +224,8 @@ workshop_body = f"""
     <div class="wrap" style="max-width:780px;">
       {section_head("REQUEST A WORKSHOP", "Bring robotics to your campus.",
                      "Iyonex Automation can collaborate with colleges, universities, technical institutions and organizations to conduct focused workshops and technical learning programs.")}
-      <form class="reveal" data-demo-form data-store-key="workshop">
+      <p class="note-box">This form prepares an email draft. You must send it from your email app. No application is submitted or saved by this website. Read our <a href="privacy.html">privacy notice</a>.</p>
+      <form class="reveal" action="mailto:ceo@iyonex.com" method="post" enctype="text/plain" data-email-form data-enquiry="workshop">
         <div class="form-grid">
           <div class="field"><label for="w-name">Name</label><input id="w-name" name="name" type="text" required></div>
           <div class="field"><label for="w-org">Organization / College</label><input id="w-org" name="org" type="text" required></div>
@@ -236,7 +238,7 @@ workshop_body = f"""
           <div class="field full"><label for="w-location">Location / Online</label><input id="w-location" name="location" type="text"></div>
           <div class="field full"><label for="w-message">Message</label><textarea id="w-message" name="message"></textarea></div>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-top:26px;">Request Workshop</button>
+        <button type="submit" class="btn btn-primary" style="margin-top:26px;">Prepare Workshop Email</button>
         <p class="form-status" style="display:none;margin-top:16px;color:var(--text-dim);font-size:0.9rem;"></p>
       </form>
     </div>
@@ -252,3 +254,4 @@ PAGES_LEARN.append(("workshops.html", {
     "desc": "Industry-oriented robotics, automation and embedded systems workshops from Iyonex Automation, for campuses and organizations.",
     "active": "learning",
 }, workshop_body))
+

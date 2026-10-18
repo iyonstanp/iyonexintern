@@ -21,7 +21,7 @@ def nav(active=""):
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo" aria-label="Iyonex Automation — home">
-        <img src="assets/iyonex-logo.png" alt="Iyonex" class="logo-img">
+        <img src="assets/logo.png" alt="Iyonex" class="logo-img">
         <span class="logo-sub">AUTOMATION</span>
       </a>
 
@@ -93,7 +93,7 @@ FOOTER = f"""
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="logo" aria-label="Iyonex Automation — home">
-            <img src="assets/iyonex-logo.png" alt="Iyonex" class="logo-img logo-img--lg">
+            <img src="assets/logo.png" alt="Iyonex" class="logo-img logo-img--lg">
           </a>
           <p>Intelligent robotics. Smarter factories.<br>Autonomous mobile robots and industrial automation, engineered for real-world factory deployment.</p>
         </div>
@@ -124,22 +124,23 @@ FOOTER = f"""
           </ul>
           <h4 style="margin-top:26px;">Connect</h4>
           <ul>
-            <li><a href="{COMPANY_LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="{COMPANY_LINKEDIN}" target="_blank" rel="noopener">Founder on LinkedIn</a></li>
             <li><a href="mailto:{COMPANY_EMAIL}">{COMPANY_EMAIL}</a></li>
             <li><a href="tel:{COMPANY_PHONE.replace(' ', '')}">{COMPANY_PHONE}</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 {COMPANY_NAME}. All rights reserved.</span>
-        <span>{COMPANY_ADDRESS_FULL} &nbsp;&middot;&nbsp; <a href="mailto:{COMPANY_EMAIL}" style="color:var(--text-dim)">{COMPANY_EMAIL}</a> &nbsp;&middot;&nbsp; <a href="admin-login.html" rel="nofollow" style="color:var(--text-faint);font-size:0.78rem;">Staff Login</a></span>
+        <span>&copy; 2026 {COMPANY_NAME}. All rights reserved. &nbsp; <a href="privacy.html">Privacy</a></span>
+        <span>{COMPANY_ADDRESS_FULL} &nbsp;&middot;&nbsp; <a href="mailto:{COMPANY_EMAIL}" style="color:var(--text-dim)">{COMPANY_EMAIL}</a></span>
       </div>
     </div>
   </footer>
 """
 
 # --------------------------------------------------------------- HEAD ----
-def head(title, desc, og_title=None, extra=""):
+def head(title, desc, og_title=None, extra="", filename="index.html"):
+    page_url = COMPANY_DOMAIN + ("" if filename == "index.html" else filename)
     og_title = og_title or title
     return f"""<!doctype html>
 <html lang="en">
@@ -148,13 +149,15 @@ def head(title, desc, og_title=None, extra=""):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="{COMPANY_DOMAIN}" />
+<link rel="canonical" href="{page_url}" />
 <meta property="og:type" content="website">
+<meta property="og:url" content="{page_url}">
 <meta property="og:title" content="{og_title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="assets/iyonex-logo.png">
+<meta property="og:image" content="{COMPANY_DOMAIN}assets/og-image.png">
+<meta property="og:image:alt" content="Iyonex Automation — robotics and industrial automation">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {{
@@ -162,7 +165,7 @@ def head(title, desc, og_title=None, extra=""):
   "@type": "Organization",
   "name": "{COMPANY_NAME}",
   "url": "{COMPANY_DOMAIN}",
-  "logo": "{COMPANY_DOMAIN}assets/iyonex-logo.png",
+  "logo": "{COMPANY_DOMAIN}assets/logo.png",
   "email": "{COMPANY_EMAIL}",
   "telephone": "{COMPANY_PHONE}",
   "address": {{
@@ -172,7 +175,7 @@ def head(title, desc, og_title=None, extra=""):
     "postalCode": "605008",
     "addressCountry": "IN"
   }},
-  "sameAs": ["{COMPANY_LINKEDIN}"]
+  "areaServed": "India"
 }}
 </script>
 {extra}
@@ -182,9 +185,8 @@ def head(title, desc, og_title=None, extra=""):
 def page(filename, title, desc, active, body, og_title=None, use_3d=False):
     extra_head = ""
     extra_body_scripts = ""
-    if use_3d:
-        extra_body_scripts = '\n<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>\n<script src="js/hero3d.js"></script>'
-    html = (head(title, desc, og_title, extra_head) + "<body>\n" + nav(active) + '\n<main id="main">\n' + body
+    # Hero schematics are SVG and work without WebGL or third-party scripts.
+    html = (head(title, desc, og_title, extra_head, filename) + "<body>\n" + nav(active) + '\n<main id="main">\n' + body
             + "\n</main>\n" + FOOTER + '\n<script src="js/main.js"></script>' + extra_body_scripts + '\n</body>\n</html>\n')
     with open(os.path.join(OUT, filename), "w", encoding="utf-8") as f:
         f.write(html)
@@ -200,3 +202,10 @@ for fname, meta, body in PAGES:
     page(fname, meta["title"], meta["desc"], meta["active"], body, meta.get("og_title"), use_3d=(fname in THREE_D_PAGES))
 
 print("Done.")
+
+
+from xml.sax.saxutils import escape
+public_pages = [fname for fname, _, _ in PAGES if fname != '404.html']
+urls = ''.join('<url><loc>' + escape(COMPANY_DOMAIN + ('' if p == 'index.html' else p)) + '</loc></url>' for p in public_pages)
+with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+    f.write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + '</urlset>')

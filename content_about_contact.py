@@ -48,7 +48,7 @@ about_body = f"""
     <div class="wrap" style="max-width:780px;">
       <p class="h2 reveal" style="font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.35;margin-bottom:40px;">Build technology that works beyond the laboratory and creates measurable value in the real world.</p>
       <div class="note-box reveal">
-        <strong>Founder and team.</strong> Details about our founding team will be published here as they are finalized. In the meantime, reach out directly through the contact page &mdash; we&rsquo;re happy to talk.
+        <h3>Iyonstan P · Founder</h3><p>Iyonstan brings practical experience in robotics, embedded systems, IoT prototyping and student technical training. His work includes mobile robot development, microcontroller systems and hands-on engineering workshops.</p><p>IYONEX is building toward accessible automation for small factories, combining product development with practical technical learning.</p><a class="tile-link" href="{COMPANY_LINKEDIN}" target="_blank" rel="noopener">Meet the founder on LinkedIn &rarr;</a>
       </div>
     </div>
   </section>
@@ -78,7 +78,7 @@ contact_body = f"""
 
   <section class="section">
     <div class="wrap grid-2">
-      <form class="reveal" data-demo-form data-store-key="contact">
+      <form class="reveal" action="mailto:ceo@iyonex.com" method="post" enctype="text/plain" data-email-form data-enquiry="contact">
         <div class="form-grid">
           <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" required></div>
           <div class="field"><label for="c-company">Company</label><input id="c-company" name="company" type="text"></div>
@@ -98,7 +98,7 @@ contact_body = f"""
           </div>
           <div class="field full"><label for="c-message">Message</label><textarea id="c-message" name="message"></textarea></div>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-top:26px;">Start a Conversation</button>
+        <button type="submit" class="btn btn-primary" style="margin-top:26px;">Prepare Enquiry Email</button>
         <p class="form-status" style="display:none;margin-top:16px;color:var(--text-dim);font-size:0.9rem;"></p>
       </form>
 
@@ -108,10 +108,10 @@ contact_body = f"""
           <p style="margin-bottom:14px;color:var(--text-dim);display:flex;gap:10px;"><span style="color:var(--blue);">&#9679;</span> {COMPANY_ADDRESS_FULL}</p>
           <p style="margin-bottom:14px;color:var(--text-dim);display:flex;gap:10px;"><span style="color:var(--blue);">&#9679;</span> <a href="mailto:{COMPANY_EMAIL}" style="color:var(--text-dim);">{COMPANY_EMAIL}</a></p>
           <p style="margin-bottom:14px;color:var(--text-dim);display:flex;gap:10px;"><span style="color:var(--blue);">&#9679;</span> <a href="tel:{COMPANY_PHONE_TEL}" style="color:var(--text-dim);">{COMPANY_PHONE}</a></p>
-          <p style="color:var(--text-dim);display:flex;gap:10px;"><span style="color:var(--blue);">&#9679;</span> <a href="{COMPANY_LINKEDIN}" target="_blank" rel="noopener" style="color:var(--text-dim);">LinkedIn</a></p>
+          <p style="color:var(--text-dim);display:flex;gap:10px;"><span style="color:var(--blue);">&#9679;</span> <a href="{COMPANY_LINKEDIN}" target="_blank" rel="noopener" style="color:var(--text-dim);">Founder on LinkedIn</a></p>
         </div>
         <div class="note-box">
-          This form isn&rsquo;t yet connected to a live inbox. For anything time-sensitive, please email or call directly using the details above.
+          This form prepares an email draft addressed to ceo@iyonex.com. Send it from your email app to contact us. No enquiry is submitted automatically. You can also call directly. <a href="privacy.html">Privacy notice</a>.
         </div>
       </div>
     </div>
@@ -145,3 +145,15 @@ PAGES_AC.append(("404.html", {
     "desc": "This page could not be found.",
     "active": "",
 }, notfound_body))
+
+
+privacy_body = """
+<section class="hero"><div class="wrap"><div class="eyebrow">PRIVACY</div><h1 class="h1">Your enquiry, handled clearly.</h1><p class="lede">Last updated: 18 October 2026</p></div></section>
+<section class="section"><div class="wrap" style="max-width:780px;">
+<h2 class="h2">Enquiry information</h2><p class="body-copy">Our enquiry forms prepare an email draft on your device. The website does not save form entries or resumes in a database or browser storage. Information reaches Iyonex only when you send the email yourself. You may contact us directly instead of using a form.</p>
+<h3>How we use information you send</h3><p class="body-copy">We use your name, contact details, requirements and any resume you choose to send to respond to your enquiry, discuss a project or review your interest in a learning program. Please do not include passwords, identity documents or other information unrelated to your enquiry.</p>
+<h3>Third-party services</h3><p class="body-copy">Your email provider handles the email draft and delivery under its own policies. Fonts load from Google Fonts, and some illustrative images load from Unsplash; those requests disclose connection information to that provider. Hosting providers may keep operational access logs. External social links have their own privacy practices.</p>
+<h3>Questions or deletion requests</h3><p class="body-copy">Email <a href="mailto:ceo@iyonex.com">ceo@iyonex.com</a> to ask about information you have sent, request a correction or request deletion. We retain correspondence as needed to handle the enquiry and any resulting business relationship.</p>
+</div></section>
+"""
+PAGES_AC.append(("privacy.html", {"title":"Privacy | Iyonex Automation", "desc":"How Iyonex Automation handles enquiry information and email-based internship and workshop requests.", "active":""}, privacy_body))
