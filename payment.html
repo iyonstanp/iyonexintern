@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make a Payment | IYONEX Automation</title>
+  <meta name="description" content="Pay an IYONEX invoice or confirmed programme fee securely through Razorpay.">
+  <link rel="canonical" href="https://www.iyonex.com/payment.html">
+  <link rel="icon" type="image/png" href="assets/favicon-32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+  <script src="js/razorpay-checkout.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="IYONEX Automation home">
+        <img src="assets/logo.png" alt="IYONEX" class="logo-img">
+        <span class="logo-sub">AUTOMATION</span>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-ghost">Back to website</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding-bottom:28px;">
+      <div class="aurora"></div>
+      <div class="blueprint-bg"></div>
+      <div class="wrap" style="position:relative;z-index:1;max-width:760px;">
+        <div class="eyebrow reveal">SECURE ONLINE PAYMENT</div>
+        <h1 class="h1 grad-text reveal" style="font-size:clamp(2.2rem,4.4vw,3.5rem);">Pay IYONEX securely.</h1>
+        <p class="hero-sub reveal">Use this page to pay an invoice or a programme fee already confirmed by IYONEX Automation.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap" style="max-width:720px;">
+        <div class="tile tile--glass">
+          <div class="section-head">
+            <div class="eyebrow">PAYMENT DETAILS</div>
+            <h2 class="h2">Enter your confirmed payment details.</h2>
+            <p class="lede" style="margin-top:12px;">Enter the exact amount and reference printed on your IYONEX invoice or shared in your written fee confirmation. Do not use an estimate.</p>
+          </div>
+
+          <form id="payment-form">
+            <div class="form-grid">
+              <div class="field full">
+                <label for="payer-name">Full name</label>
+                <input id="payer-name" name="name" type="text" maxlength="80" autocomplete="name" required>
+              </div>
+              <div class="field full">
+                <label for="payer-email">Email address</label>
+                <input id="payer-email" name="email" type="email" maxlength="120" autocomplete="email" required>
+              </div>
+              <div class="field full">
+                <label for="payment-reference">IYONEX invoice / confirmation reference</label>
+                <input id="payment-reference" name="reference" type="text" maxlength="40" pattern="[A-Za-z0-9_-]{1,40}" autocomplete="off" placeholder="Example: IYX-INV-2026-001" required>
+              </div>
+              <div class="field full">
+                <label for="payment-amount">Amount (INR)</label>
+                <input id="payment-amount" name="amount" type="number" min="1.00" max="1000000" step="0.01" inputmode="decimal" placeholder="0.00" required>
+                <small style="color:var(--text-dim);display:block;margin-top:8px;">Minimum ₹1.00. Maximum ₹10,00,000 per checkout.</small>
+              </div>
+            </div>
+            <button id="pay-button" type="submit" class="btn btn-primary" style="margin-top:26px;width:100%;justify-content:center;">
+              <span id="pay-button-label">Continue to secure payment</span>
+            </button>
+            <p id="payment-status" class="form-status" role="status" aria-live="polite" style="display:none;margin-top:16px;"></p>
+          </form>
+        </div>
+
+        <div class="note-box" style="margin-top:24px;">
+          <strong>Payment safety</strong>
+          <p style="margin-top:8px;">Razorpay securely handles the payment method and authentication. IYONEX does not receive or store your card number, UPI PIN or banking password through this page. Never share your UPI PIN or OTP with anyone.</p>
+          <p style="margin-top:8px;">Only pay an amount already approved by IYONEX. For questions, contact <a href="mailto:ceo@iyonex.com">ceo@iyonex.com</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-bottom">
+        <span>&copy; 2026 IYONEX Automation Private Limited.</span>
+        <span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
