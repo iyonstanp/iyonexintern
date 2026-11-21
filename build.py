@@ -55,6 +55,7 @@ def nav(active=""):
         </li>
         <li class="{cls('about')}"><a href="about.html">About</a></li>
         <li class="{cls('contact')}"><a href="contact.html">Contact</a></li>
+        <li><a href="payment.html">Payments</a></li>
       </ul>
 
       <div class="nav-actions">
