@@ -53,9 +53,9 @@ class handler(BaseHTTPRequestHandler):
 
         key_id = os.environ.get("RAZORPAY_KEY_ID", "").strip()
         key_secret = os.environ.get("RAZORPAY_KEY_SECRET", "").strip()
-        if (not key_id.startswith("rzp_live_") or not key_secret
+        if (not key_id.startswith("rzp_test_") or not key_secret
                 or key_secret.startswith("REPLACE_WITH_")):
-            return send_json(self, 503, {"error": "Live Razorpay credentials are not configured."})
+            return send_json(self, 503, {"error": "Test Razorpay credentials are not configured."})
 
         encoded_token_payload, supplied_token_signature = order_token.split(".", 1)
         expected_token_signature = hmac.new(
