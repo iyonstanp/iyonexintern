@@ -72,7 +72,7 @@
             const verifyResponse = await fetch('/api/verify-payment', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(response)
+              body: JSON.stringify({ ...response, order_token: order.order_token })
             });
             const result = await verifyResponse.json();
 
