@@ -23,7 +23,7 @@ The former client-side staff login and local-only dashboard are retired. Legacy 
 - A GitHub commit does not prove www.iyonex.com has deployed. Check the existing hosting deployment before announcing it live.
 
 
-## Razorpay checkout (temporary ₹1 live gateway verification)
+## Razorpay checkout (temporary ₹1 Razorpay test-mode verification)
 
 A dedicated `payment.html` page is backed by two Vercel Python Functions:
 - `POST /api/create-order` creates a fixed INR 1.00 order. The amount and reference are server-controlled and cannot be changed by the browser.
@@ -33,7 +33,7 @@ Set these variables in Vercel Project Settings → Environment Variables. For lo
 - `RAZORPAY_KEY_ID`
 - `RAZORPAY_KEY_SECRET` (sensitive)
 
-The browser receives only the live Key ID. This page is intentionally restricted to exactly ₹1.00 and requires a live Key ID beginning with `rzp_live_`; it will reject test keys. The ₹1 is a real charge, not a sandbox test and not the internship fee. Rotate any key secret previously pasted into chat or source. Configure a newly generated live key pair only in Vercel Environment Variables.
+The browser receives only the test Key ID. This page is intentionally restricted to exactly ₹1.00 and requires a test Key ID beginning with `rzp_test_`; it will reject test keys. The ₹1 order is a Razorpay sandbox transaction and does not debit real money or represent the internship fee. Rotate any key secret previously pasted into chat or source. Configure a newly generated test key pair only in Vercel Environment Variables.
 
 The payment page is an invoice-reference checkout, not an invoice database. The payer enters the exact amount and reference from an IYONEX-issued invoice or written fee confirmation. The backend does not currently compare that reference to an internal billing ledger, because this site has no payment database. Reconcile captured payments against the issued invoice before marking an invoice settled.
 
