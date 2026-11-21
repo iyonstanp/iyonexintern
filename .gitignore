@@ -1,0 +1,7 @@
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+.vercel
+__pycache__/
+*.py[cod]
