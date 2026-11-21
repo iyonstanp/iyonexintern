@@ -51,7 +51,7 @@
         amount: order.amount,
         currency: order.currency,
         name: 'IYONEX Automation Private Limited',
-        description: 'Embedded Systems Internship — one-rupee live gateway test',
+        description: 'Embedded Systems Internship — one-rupee Razorpay test-mode transaction',
         order_id: order.order_id,
         prefill: { name: payer.name, email: payer.email },
         notes: { reference: 'ESI-1M-LIVE-TEST' },
@@ -69,7 +69,7 @@
 
             if (result.paid === true && result.verified === true) {
               showStatus(
-                '₹1 live payment captured and verified. This confirms the Razorpay gateway test only, not internship admission. Payment ID: ' + result.payment_id + '. Please retain this confirmation.',
+                '₹1 test payment captured and verified. This confirms the Razorpay gateway test only, not internship admission. Payment ID: ' + result.payment_id + '. Please retain this confirmation.',
                 false
               );
               form.reset();
