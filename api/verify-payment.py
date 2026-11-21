@@ -53,8 +53,9 @@ class handler(BaseHTTPRequestHandler):
 
         key_id = os.environ.get("RAZORPAY_KEY_ID", "").strip()
         key_secret = os.environ.get("RAZORPAY_KEY_SECRET", "").strip()
-        if not key_id or not key_secret or key_secret.startswith("REPLACE_WITH_"):
-            return send_json(self, 503, {"error": "Online payments are not configured yet."})
+        if (not key_id.startswith("rzp_live_") or not key_secret
+                or key_secret.startswith("REPLACE_WITH_")):
+            return send_json(self, 503, {"error": "Live Razorpay credentials are not configured."})
 
         encoded_token_payload, supplied_token_signature = order_token.split(".", 1)
         expected_token_signature = hmac.new(
@@ -81,8 +82,7 @@ class handler(BaseHTTPRequestHandler):
                 or token_data.get("currency") != "INR"
                 or isinstance(token_amount, bool)
                 or not isinstance(token_amount, int)
-                or token_amount < 100
-                or token_amount > 100000000
+                or token_amount != 100
                 or not isinstance(token_issued_at, int)
                 or isinstance(token_issued_at, bool)
                 or token_issued_at > now + 60
@@ -132,8 +132,8 @@ class handler(BaseHTTPRequestHandler):
         order_notes = order.get("notes") or {}
         if (order.get("id") != order_id or order.get("currency") != "INR"
                 or payment.get("currency") != "INR"
-                or order.get("amount") != token_amount
-                or payment.get("amount") != token_amount
+                or order.get("amount") != 100
+                or payment.get("amount") != 100
                 or order.get("receipt") != token_receipt
                 or order_notes.get("iyonex_reference") != token_reference):
             return send_json(self, 400, {"error": "The payment amount or currency does not match the original order."})
