@@ -76,7 +76,8 @@ class handler(BaseHTTPRequestHandler):
         token_receipt = token_data.get("receipt") if isinstance(token_data, dict) else None
         token_reference = token_data.get("reference") if isinstance(token_data, dict) else None
         now = int(time.time())
-        if (token_data.get("order_id") != order_id
+        if (not isinstance(token_data, dict)
+                or token_data.get("order_id") != order_id
                 or token_data.get("currency") != "INR"
                 or isinstance(token_amount, bool)
                 or not isinstance(token_amount, int)
