@@ -16,7 +16,7 @@
 
   function setBusy(busy, label) {
     button.disabled = busy;
-    buttonLabel.textContent = label || (busy ? 'Connecting to Razorpay…' : 'Continue to secure payment');
+    buttonLabel.textContent = label || (busy ? 'Connecting to Razorpay…' : 'Pay ₹1.00 securely');
     button.style.opacity = busy ? '0.7' : '1';
   }
 
@@ -29,18 +29,9 @@
       return;
     }
 
-    const rupees = Number(document.getElementById('payment-amount').value);
-    const amountPaise = Math.round(rupees * 100);
-    if (!Number.isSafeInteger(amountPaise) || amountPaise < 100 || amountPaise > 100000000) {
-      showStatus('Enter an amount between ₹1.00 and ₹10,00,000.00.', true);
-      return;
-    }
-
     const payer = {
       name: document.getElementById('payer-name').value.trim(),
-      email: document.getElementById('payer-email').value.trim(),
-      reference: document.getElementById('payment-reference').value.trim(),
-      amount: amountPaise
+      email: document.getElementById('payer-email').value.trim()
     };
 
     setBusy(true, 'Creating secure order…');
@@ -60,10 +51,10 @@
         amount: order.amount,
         currency: order.currency,
         name: 'IYONEX Automation Private Limited',
-        description: 'Invoice / confirmed programme fee',
+        description: 'Embedded Systems Internship — one-rupee live gateway test',
         order_id: order.order_id,
         prefill: { name: payer.name, email: payer.email },
-        notes: { reference: payer.reference },
+        notes: { reference: 'ESI-1M-LIVE-TEST' },
         theme: { color: '#2563eb' },
         handler: async function (response) {
           setBusy(true, 'Verifying payment…');
@@ -78,9 +69,7 @@
 
             if (result.paid === true && result.verified === true) {
               showStatus(
-                'Payment captured and verified. Reference: ' + payer.reference +
-                '. Razorpay payment ID: ' + result.payment_id +
-                '. Please retain this confirmation for your records.',
+                '₹1 live payment captured and verified. This confirms the Razorpay gateway test only, not internship admission. Payment ID: ' + result.payment_id + '. Please retain this confirmation.',
                 false
               );
               form.reset();
@@ -88,7 +77,7 @@
               showStatus(
                 'The payment signature is valid, but the payment is not yet captured by Razorpay. Status: ' +
                 (result.payment_status || 'pending') +
-                '. Please do not pay again. Contact IYONEX with your reference: ' + payer.reference,
+                '. Please do not pay again. Contact IYONEX with your payment ID: ' + (response.razorpay_payment_id || 'pending'),
                 false
               );
             } else {
@@ -103,7 +92,7 @@
         modal: {
           ondismiss: function () {
             setBusy(false);
-            showStatus('Checkout was closed. No payment confirmation was received. You can try again using the same invoice details.', false);
+            showStatus('Checkout was closed. No payment confirmation was received. You can try again after checking your Razorpay payment status.', false);
           }
         }
       };
