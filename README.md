@@ -22,3 +22,19 @@ The former client-side staff login and local-only dashboard are retired. Legacy 
 - The generator outputs unique canonical URLs and a complete public sitemap.
 - A GitHub commit does not prove www.iyonex.com has deployed. Check the existing hosting deployment before announcing it live.
 
+
+## Razorpay checkout (test mode setup)
+
+A dedicated `payment.html` page is backed by two Vercel Python Functions:
+- `POST /api/create-order` validates the supplied INR amount and reference, then creates a Razorpay order using server-side environment variables.
+- `POST /api/verify-payment` validates the HMAC-SHA256 signature, checks that the payment belongs to the supplied order, and confirms the amount/currency and captured status with Razorpay.
+
+Set these variables in Vercel Project Settings → Environment Variables (never commit a `.env` file):
+- `RAZORPAY_KEY_ID`
+- `RAZORPAY_KEY_SECRET` (sensitive)
+
+The browser receives only the Key ID. Rotate any key secret that has been pasted into a chat, ticket, source file or other shared location. Use Razorpay test credentials for the first deployment. Run a live payment only after validating all test cases, configuring live credentials, and confirming the invoice / fee process.
+
+The payment page is an invoice-reference checkout, not an invoice database. The payer enters the exact amount and reference from an IYONEX-issued invoice or written fee confirmation. The backend does not currently compare that reference to an internal billing ledger, because this site has no payment database. Reconcile captured payments against the issued invoice before marking an invoice settled.
+
+Local preview of the static website: `python -m http.server 8080`. The `/api` routes require the Vercel Functions runtime; test them with `vercel dev` after installing the Vercel CLI and configuring local environment variables.
