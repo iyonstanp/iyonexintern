@@ -60,7 +60,7 @@ class handler(BaseHTTPRequestHandler):
             "currency": "INR",
             "receipt": receipt,
             "notes": {
-                "iyონex_reference": reference,
+                "iyonex_reference": reference,
                 "customer_name": name,
                 "customer_email": email
             }
