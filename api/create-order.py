@@ -38,24 +38,22 @@ class handler(BaseHTTPRequestHandler):
         if not isinstance(payload, dict):
             return send_json(self, 400, {"error": "A valid JSON request is required."})
 
-        amount = payload.get("amount")
-        reference = payload.get("reference", "")
+        # Temporary one-rupee LIVE gateway verification. Never accept an amount from the browser.
+        amount = 100
+        reference = "ESI-1M-LIVE-TEST"
         name = str(payload.get("name", "")).strip()[:80]
         email = str(payload.get("email", "")).strip()[:120]
 
-        if isinstance(amount, bool) or not isinstance(amount, int) or amount < 100:
-            return send_json(self, 400, {"error": "Amount must be an integer of at least 100 paise."})
-        if amount > 100000000:
-            return send_json(self, 400, {"error": "Amount exceeds the online checkout limit of INR 10,00,000."})
-        if not isinstance(reference, str) or not re.fullmatch(r"[A-Za-z0-9_-]{1,40}", reference):
-            return send_json(self, 400, {"error": "Enter a valid IYONEX invoice or confirmation reference (letters, numbers, hyphens or underscores)."})
+        if amount != 100:
+            return send_json(self, 400, {"error": "This temporary gateway verification is fixed at INR 1.00."})
         if not name or not email or len(email) > 120 or not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email):
             return send_json(self, 400, {"error": "Enter your name and a valid email address."})
 
         key_id = os.environ.get("RAZORPAY_KEY_ID", "").strip()
         key_secret = os.environ.get("RAZORPAY_KEY_SECRET", "").strip()
-        if not key_id or not key_secret or key_secret.startswith("REPLACE_WITH_"):
-            return send_json(self, 503, {"error": "Online payments are not configured yet. Please contact IYONEX."})
+        if (not key_id.startswith("rzp_live_") or not key_secret
+                or key_secret.startswith("REPLACE_WITH_")):
+            return send_json(self, 503, {"error": "Live Razorpay credentials are not configured. Add the new live Key ID and Secret in Vercel."})
 
         receipt = reference[:30] + "-" + secrets.token_hex(4)
         order_payload = {
