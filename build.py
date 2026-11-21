@@ -55,6 +55,7 @@ def nav(active=""):
         </li>
         <li class="{cls('about')}"><a href="about.html">About</a></li>
         <li class="{cls('contact')}"><a href="contact.html">Contact</a></li>
+        <li><a href="payment.html">Payments</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -205,7 +206,7 @@ print("Done.")
 
 
 from xml.sax.saxutils import escape
-public_pages = [fname for fname, _, _ in PAGES if fname != '404.html']
+public_pages = [fname for fname, _, _ in PAGES if fname != '404.html'] + ['payment.html']
 urls = ''.join('<url><loc>' + escape(COMPANY_DOMAIN + ('' if p == 'index.html' else p)) + '</loc></url>' for p in public_pages)
 with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8') as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + '</urlset>')
