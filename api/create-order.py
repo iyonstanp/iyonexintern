@@ -51,9 +51,9 @@ class handler(BaseHTTPRequestHandler):
 
         key_id = os.environ.get("RAZORPAY_KEY_ID", "").strip()
         key_secret = os.environ.get("RAZORPAY_KEY_SECRET", "").strip()
-        if (not key_id.startswith("rzp_live_") or not key_secret
+        if (not key_id.startswith("rzp_test_") or not key_secret
                 or key_secret.startswith("REPLACE_WITH_")):
-            return send_json(self, 503, {"error": "Live Razorpay credentials are not configured. Add the new live Key ID and Secret in Vercel."})
+            return send_json(self, 503, {"error": "Test Razorpay credentials are not configured. Add a newly rotated test Key ID and Secret in Vercel."})
 
         receipt = reference[:30] + "-" + secrets.token_hex(4)
         order_payload = {
