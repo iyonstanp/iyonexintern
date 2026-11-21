@@ -29,7 +29,7 @@ A dedicated `payment.html` page is backed by two Vercel Python Functions:
 - `POST /api/create-order` validates the supplied INR amount and reference, then creates a Razorpay order using server-side environment variables.
 - `POST /api/verify-payment` validates the HMAC-SHA256 signature, checks that the payment belongs to the supplied order, and confirms the amount/currency and captured status with Razorpay.
 
-Set these variables in Vercel Project Settings → Environment Variables (never commit a `.env` file):
+Set these variables in Vercel Project Settings → Environment Variables. For local work, copy `.env.example` to `.env.local`; `.env*` files are ignored by Git. Never commit a real `.env` file or secret:
 - `RAZORPAY_KEY_ID`
 - `RAZORPAY_KEY_SECRET` (sensitive)
 
