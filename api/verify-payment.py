@@ -74,6 +74,24 @@ class handler(BaseHTTPRequestHandler):
         if payment.get("id") != payment_id or payment.get("order_id") != order_id:
             return send_json(self, 400, {"error": "The payment does not match the supplied Razorpay order."})
 
+        order_request = urllib.request.Request(
+            "https://api.razorpay.com/v1/orders/" + order_id,
+            headers={"Authorization": "Basic " + auth},
+            method="GET"
+        )
+        try:
+            with urllib.request.urlopen(order_request, timeout=15) as response:
+                order = json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError:
+            return send_json(self, 502, {"error": "Could not confirm the original order with Razorpay."})
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
+            return send_json(self, 502, {"error": "Could not confirm the original order. Please contact IYONEX."})
+
+        if (order.get("id") != order_id or order.get("currency") != "INR"
+                or payment.get("currency") != "INR"
+                or order.get("amount") != payment.get("amount")):
+            return send_json(self, 400, {"error": "The payment amount or currency does not match the original order."})
+
         if payment.get("status") != "captured":
             return send_json(self, 202, {
                 "verified": True,
