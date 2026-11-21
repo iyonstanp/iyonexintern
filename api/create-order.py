@@ -1,8 +1,11 @@
 import base64
+import hashlib
+import hmac
 import json
 import os
 import re
 import secrets
+import time
 import urllib.error
 import urllib.request
 from http.server import BaseHTTPRequestHandler
@@ -88,11 +91,31 @@ class handler(BaseHTTPRequestHandler):
         if not order.get("id"):
             return send_json(self, 502, {"error": "Razorpay did not return an order ID."})
 
+        # Short-lived proof that this exact order was created by this backend.
+        token_payload = {
+            "order_id": order["id"],
+            "amount": amount,
+            "currency": "INR",
+            "receipt": receipt,
+            "reference": reference,
+            "iat": int(time.time())
+        }
+        encoded_token_payload = base64.urlsafe_b64encode(
+            json.dumps(token_payload, separators=(",", ":"), sort_keys=True).encode("utf-8")
+        ).decode("ascii").rstrip("=")
+        token_signature = hmac.new(
+            key_secret.encode("utf-8"),
+            encoded_token_payload.encode("ascii"),
+            hashlib.sha256
+        ).hexdigest()
+        order_token = encoded_token_payload + "." + token_signature
+
         return send_json(self, 201, {
             "order_id": order["id"],
             "amount": order["amount"],
             "currency": order["currency"],
-            "key_id": key_id
+            "key_id": key_id,
+            "order_token": order_token
         })
 
     def do_GET(self):
